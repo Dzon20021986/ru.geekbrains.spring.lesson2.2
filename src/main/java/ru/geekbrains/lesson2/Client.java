@@ -60,6 +60,7 @@ public class Client {
         System.out.println("Успешно создали новую корзину");
         showCart();
     }
+    // 12345
 
     private void showCart() {
         if (cart == null) {
