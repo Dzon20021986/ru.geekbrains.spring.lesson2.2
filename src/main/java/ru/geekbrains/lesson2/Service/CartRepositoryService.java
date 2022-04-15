@@ -1,6 +1,7 @@
 package ru.geekbrains.lesson2.Service;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 import ru.geekbrains.lesson2.Modul.Product;
 import ru.geekbrains.lesson2.repository.CartRepository;
 import ru.geekbrains.lesson2.repository.ProductRepository;
@@ -9,8 +10,8 @@ import javax.annotation.PostConstruct;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ServiceCart implements CartRepository {
-
+@Component
+public class CartRepositoryService implements CartRepository {
 
     private List<Product> cart;
 

@@ -3,7 +3,7 @@ package ru.geekbrains.lesson2.Modul;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
-import ru.geekbrains.lesson2.Service.ProductService;
+import ru.geekbrains.lesson2.Service.ProductRepositoryService;
 
 import javax.annotation.PostConstruct;
 import java.util.ArrayList;
@@ -14,11 +14,11 @@ import java.util.List;
 @Scope("prototype")
 public class Cart {
 
-    private ProductService productService;
+    private ProductRepositoryService productService;
     private List<Product> productList;
 
     @Autowired
-    public void setProductService(ProductService productService) {
+    public void setProductService(ProductRepositoryService productService) {
         this.productService = productService;
     }
 

@@ -11,7 +11,7 @@ import java.util.Arrays;
 import java.util.List;
 
 @Component
-public class ProductService implements ProductRepository {
+public class ProductRepositoryService implements ProductRepository {
 
     private List<Product> productList;
 

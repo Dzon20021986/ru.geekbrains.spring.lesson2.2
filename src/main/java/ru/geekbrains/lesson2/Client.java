@@ -3,7 +3,7 @@ package ru.geekbrains.lesson2;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import ru.geekbrains.lesson2.Modul.Product;
-import ru.geekbrains.lesson2.repository.CartRepository;
+import ru.geekbrains.lesson2.Service.CartRepositoryService;
 import ru.geekbrains.lesson2.Сonfig.AppConfig;
 
 import java.io.BufferedReader;
@@ -14,7 +14,7 @@ import java.io.InputStreamReader;
 
 public class Client {
     private ApplicationContext context;
-    private CartRepository cart;
+    private CartRepositoryService cart;
     private String console;
     private BufferedReader reader;
 
@@ -32,13 +32,13 @@ public class Client {
             console = reader.readLine();
             while (!console.equals("-end")) {
                 switch (console) {
-                    case "-add":
+                    case "-add":   // добавить
                         addProduct();
                         break;
-                    case "-delete":
+                    case "-delete":  // удалить
                         removeProduct();
                         break;
-                    case "-showCart":
+                    case "-showCart":  // показать карзину
                         showCart();
                         break;
                     case "-create":
@@ -54,9 +54,10 @@ public class Client {
             e.printStackTrace();
         }
     }
+    // geek brains
 
     private void createdCart() {
-        cart = context.getBean("CartRepository", CartRepository.class);
+        cart = context.getBean("cartRepositoryService", CartRepositoryService.class);
         System.out.println("Успешно создали новую корзину");
         showCart();
     }
